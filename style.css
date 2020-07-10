@@ -36,7 +36,6 @@ body {
 
 .after {
   /* Overlay */
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -57,10 +56,11 @@ h2 {
 }
 
 img {
-  height: auto;
+  height: 50vh;
   width: 100vw;
   object-fit: cover;
   object-position: center;
+  box-shadow: 0px 0px 15px 0px var(--primary);
 }
 
 a {
@@ -76,12 +76,12 @@ a:hover {
 
 #img-div {
   position: relative;
-  /* overflow: hidden; */
-  height: 50vh;
+  overflow: hidden;
+  height: 100vh;
 }
 
 #img-div #image {
-  height: 50vh;
+  height: 100%;
   filter: blur(0.08rem);
   border-radius: 0.1rem;
 }
@@ -132,6 +132,7 @@ a:hover {
 }
 
 #tribute-info aside {
+  width: 100%;
   order: 2;
 }
 
@@ -157,13 +158,6 @@ a:hover {
 
 /* =========== */
 
-/* Social */
-#social .block-of-text h2 span {
-  color: var(--primary);
-}
-
-/* =========== */
-
 /* Footer */
 
 footer {
@@ -177,18 +171,37 @@ footer p:last-of-type a {
   text-decoration-line: underline;
 }
 
+/* ===== MEDIA QUERIES ===== */
 /* Tablets */
 
-@media (min-width: 768px) {
+@media (min-width: 481px) {
+  #tribute-info img,
+  #album img {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #album iframe {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Normal */
+
+@media (min-width: 769px) {
   /* Tribute info */
 
   #tribute-info {
+    margin-top: 2rem;
     flex-flow: row nowrap;
-    height: 50vh;
   }
 
   #tribute-info .block-of-text {
-    flex: 1;
+    color: var(--secondary);
+    flex: 1.5;
   }
 
   #tribute-info aside {
@@ -200,7 +213,7 @@ footer p:last-of-type a {
     width: 100%;
   }
 
-  /* ==== */
+  /* ====== */
 
   /* Album */
 
@@ -212,20 +225,25 @@ footer p:last-of-type a {
   }
 
   #album .block-of-text {
+    color: var(--primary);
     grid-area: info;
   }
 
   #album iframe {
     grid-area: playlist;
-    display: block;
     height: 330px;
-    margin: 0 auto;
+    width: 100%;
+    padding-right: 0;
   }
 
   #album img {
     height: auto;
     width: 100%;
+    max-width: 500px;
     margin: auto;
     grid-area: acover;
   }
 }
+
+/* Large screens @media (min-width: 1025px) {
+} */
