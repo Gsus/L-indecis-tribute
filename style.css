@@ -69,6 +69,7 @@ a {
 }
 
 a:hover {
+  /* transition: all 1s; */
   text-decoration-line: underline;
 }
 
@@ -167,10 +168,6 @@ footer {
   padding: 0.4rem;
 }
 
-footer p:last-of-type a {
-  text-decoration-line: underline;
-}
-
 /* ===== MEDIA QUERIES ===== */
 /* Tablets */
 
@@ -188,7 +185,6 @@ footer p:last-of-type a {
     margin: 0 auto;
   }
 }
-
 /* Normal */
 
 @media (min-width: 769px) {
@@ -202,6 +198,7 @@ footer p:last-of-type a {
   #tribute-info .block-of-text {
     color: var(--secondary);
     flex: 1.5;
+    text-shadow: 0 0 10px var(--primary);
   }
 
   #tribute-info aside {
@@ -220,8 +217,8 @@ footer p:last-of-type a {
   #album {
     display: grid;
     grid-template-areas:
-      "acover acover info"
-      "acover acover playlist";
+      "acover info"
+      "acover playlist";
   }
 
   #album .block-of-text {
@@ -239,11 +236,22 @@ footer p:last-of-type a {
   #album img {
     height: auto;
     width: 100%;
-    max-width: 500px;
     margin: auto;
     grid-area: acover;
   }
 }
 
-/* Large screens @media (min-width: 1025px) {
-} */
+/* Large screens  */
+@media (min-width: 1025px) {
+  #album img,
+  #tribute-info aside img {
+    max-height: 50vh;
+    width: auto;
+  }
+
+  #album {
+    grid-template-columns: auto minmax(25%, 50%);
+    margin-right: 4%;
+    margin-top: 4%;
+  }
+}
