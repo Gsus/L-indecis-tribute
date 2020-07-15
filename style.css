@@ -80,20 +80,16 @@ a {
 #img-div {
   position: relative;
   overflow: hidden;
-  /* height: 100vh; */
-  /*Changing it to fit FCCs tests. Change back later*/
+  height: 100vh;
 }
 
 #img-div #image {
   max-width: 2659px;
   width: 100%;
-  /* height: 100%; */
-  /*Changing it to fit FCCs tests. Change back later*/
-  height: auto;
+  height: 100%;
   display: block;
   transform: none;
   filter: blur(0.05rem);
-  border-radius: 0.1rem;
 }
 
 #img-div .after {
@@ -129,10 +125,15 @@ a {
   font-size: 1rem;
 }
 
-#img-div .after #img-caption #social {
+#img-div .after #social {
   display: flex;
-  margin-top: 1.7rem;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+#img-div .after #social a {
+  width: 25%;
+  margin-top: 1.4rem;
 }
 
 #img-div .after .fa-headphones-alt {
@@ -210,17 +211,17 @@ footer p a:hover {
   border-bottom: 1px solid var(--secondary);
 }
 
-/* ===== MEDIA QUERIES ===== */
+/* ========================= MEDIA QUERIES  ========================== */
 
-/* Small phones */
+/* Small screens */
 
 @media (max-width: 360px) {
   #img-div .after > * {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 
   #img-div .after h2 {
-    margin-top: 0;
+    margin-top: 0.2rem;
   }
 }
 
@@ -240,6 +241,21 @@ footer p a:hover {
     margin: 0 auto;
   }
 }
+
+@media (min-width: 540px) {
+  /* Icons' spacing */
+  #img-div .after #social {
+    width: 66%;
+    max-width: 850px;
+    margin-top: 1.4rem;
+  }
+
+  #img-div .after #social a {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
 /* Normal */
 
 @media (min-width: 769px), (max-height: 500px) and (orientation: landscape) {
@@ -297,6 +313,7 @@ footer p a:hover {
 }
 
 /* Large screens  */
+
 @media (min-width: 1025px) {
   #album img,
   #tribute-info aside img {
