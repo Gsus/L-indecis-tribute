@@ -242,11 +242,11 @@ footer p a:hover {
   }
 }
 
-@media (min-width: 540px) {
+@media (min-width: 620px) {
   /* Icons' spacing */
   #img-div .after #social {
     width: 66%;
-    max-width: 850px;
+    max-width: 635px;
     margin-top: 1.4rem;
   }
 
