@@ -225,7 +225,7 @@ footer p a:hover {
   }
 }
 
-/* Tablets */
+/* Less than tablet size, yet not as small. Large phones. */
 
 @media (min-width: 481px) {
   #tribute-info img,
@@ -256,7 +256,7 @@ footer p a:hover {
   }
 }
 
-/* Normal */
+/* Tablets and up */
 
 @media (min-width: 769px), (max-height: 500px) and (orientation: landscape) {
   /* Tribute info */
@@ -315,6 +315,10 @@ footer p a:hover {
 /* Large screens  */
 
 @media (min-width: 1025px) {
+  #tribute-info .block-of-text {
+    max-width: 50%;
+  }
+
   #album img,
   #tribute-info aside img {
     max-height: 50vh;

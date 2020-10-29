@@ -1,2 +1,2 @@
 # L-indecis-tribute
-New tribute page for FCC's Responsive Web Design Certification
+A tribute website about L'indécis, a Lo-Fi Hip Hop musician/producer
